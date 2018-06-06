@@ -1,14 +1,17 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.awt.*;
 
 public class Node {
 
+	private Point p;
 	private int x, y;
 	private Node leftChild, rightChild, topChild, bottomChild;
 	
-	public Node(int x, int y, Node topChild, Node rightChild, Node bottomChild, Node leftChild) {
-		this.x = x;
-		this.y = y;
+	public Node(Point p, Node topChild, Node rightChild, Node bottomChild, Node leftChild) {
+		//this.x = x;
+		//this.y = y;
+		this.p = p;
 		this.topChild = topChild;
 		this.rightChild = rightChild;
 		this.bottomChild = bottomChild;
