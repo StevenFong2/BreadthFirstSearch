@@ -10,6 +10,7 @@ public class BFSRunner {
 	
 	public static void main(String[] args) {
 		
+		//System.out.print(5+"fooo");
 	}
 	
 	public static String[][] randomField(int x, int y){

@@ -36,4 +36,16 @@ public class BreadthFirstSearch {
 		}
 		return false;
 	}
+	
+	public ArrayList<Node> getParents(){
+		ArrayList<Node> parents = new ArrayList<Node>();
+		Node current = this.goalNode;
+		parents.add(current);
+		while(!current.equals(startNode)) {
+			parents.add(0, current.getParent());
+			current = current.getParent();
+		}
+		
+		return parents;
+	}
 }

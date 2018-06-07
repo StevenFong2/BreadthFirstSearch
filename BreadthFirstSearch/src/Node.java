@@ -5,7 +5,8 @@ import java.awt.*;
 public class Node {
 
 	private Point p;
-	private int x, y;
+	//private int x, y;
+	private Node parent;
 	private Node leftChild, rightChild, topChild, bottomChild;
 	
 	public Node(Point p, Node topChild, Node rightChild, Node bottomChild, Node leftChild) {
@@ -30,6 +31,14 @@ public class Node {
 			childNodes.add(this.leftChild);
 		
 		return childNodes;
+	}
+	
+	public void setParent(Node parent) {
+		this.parent =parent;
+	}
+	
+	public Node getParent(){
+		return this.parent;
 	}
 	
 	public boolean removeChild(Node n) {
