@@ -9,14 +9,28 @@ public class Node {
 	private Node parent;
 	private Node leftChild, rightChild, topChild, bottomChild;
 	
-	public Node(Point p, Node topChild, Node rightChild, Node bottomChild, Node leftChild) {
+	public Node(Point p, int topBound, int lengthBound) {
 		//this.x = x;
 		//this.y = y;
 		this.p = p;
-		this.topChild = topChild;
-		this.rightChild = rightChild;
-		this.bottomChild = bottomChild;
-		this.leftChild = leftChild;
+		int x = p.x;
+		int y = p.y;
+		if(y + 1 < topBound) {
+			this.topChild = new Node(new Point(x,y+1), topBound, lengthBound);
+			this.topChild.setParent(this);
+		}
+		if(x+1<lengthBound) {
+			this.rightChild = new Node(new Point(x+1,y), topBound, lengthBound);
+			this.rightChild.setParent(this);
+		}
+		if(y-1 > 0) {
+			this.bottomChild = new Node(new Point(x,y-1), topBound, lengthBound);
+			this.bottomChild.setParent(this);
+		}
+		if(x-1<0) {
+			this.leftChild = new Node(new Point(x-1,y), topBound, lengthBound);
+			this.leftChild.setParent(this);
+		}
 	}
 	
 	public ArrayList<Node> getChildren(){
@@ -33,8 +47,12 @@ public class Node {
 		return childNodes;
 	}
 	
+	public Point getPoint() {
+		return this.p;
+	}
+	
 	public void setParent(Node parent) {
-		this.parent =parent;
+		this.parent = parent;
 	}
 	
 	public Node getParent(){

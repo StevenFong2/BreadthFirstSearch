@@ -9,6 +9,8 @@ public class BFSRunner {
 	private String[][] field;
 	
 	public static void main(String[] args) {
+		String[][] ran = randomField(5,5);
+	//	BreadthFirstSearch search = new BreadthFirstSearch(
 		
 		//System.out.print(5+"fooo");
 	}
@@ -29,6 +31,8 @@ public class BFSRunner {
 				}	
 			}
 		}
+		field[0][0] = EMPTY_FIELD;
+		field[5][5] = EMPTY_FIELD;
 		
 		return field;
 	}
